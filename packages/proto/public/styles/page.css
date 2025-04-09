@@ -1,8 +1,10 @@
+@import "tokens.css";
+
 header {
-    color: white;
+    color: var(--color-text);
     background-color: #426;
 }
 body {
-    color: white;
+    color: var(--color-text);
     background-color: black;
 }

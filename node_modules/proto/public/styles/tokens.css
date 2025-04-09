@@ -1,0 +1,9 @@
+:root {
+    --color-text: white;
+    --color-link: var(--color-text);
+
+}
+
+a {
+    color: var(--color-link);
+}
