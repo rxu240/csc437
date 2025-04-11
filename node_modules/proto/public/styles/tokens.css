@@ -1,9 +1,10 @@
 :root {
     --color-text: white;
+    --color-text-inverted: black;
     --color-link: var(--color-text);
-
+    --color-background: #426;
 }
 
 a {
-    color: var(--color-link);
+    color: var(--color-text);
 }

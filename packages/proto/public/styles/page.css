@@ -2,9 +2,9 @@
 
 header {
     color: var(--color-text);
-    background-color: #426;
+    background-color: var(--color-background);
 }
 body {
     color: var(--color-text);
-    background-color: black;
+    background-color: var(--color-background);
 }
