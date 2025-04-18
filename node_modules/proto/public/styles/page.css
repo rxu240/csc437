@@ -3,8 +3,18 @@
 header {
     color: var(--color-text);
     background-color: var(--color-background);
+    font-family: 'Beau Rivage', 'Tangerine', fantasy;
 }
 body {
     color: var(--color-text);
     background-color: var(--color-background);
+    font-family: 'IBM Plex Serif', serif;
+}
+
+svg.icon {
+    display: inline;
+    height: 2em;
+    width: 2em;
+    vertical-align: top;
+    fill: currentColor;
 }
