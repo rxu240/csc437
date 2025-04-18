@@ -3,12 +3,19 @@
 header {
     color: var(--color-text);
     background-color: var(--color-background);
+    text-align: center;
+    font-size: 24px;
+    font-style: bold;
     font-family: 'Beau Rivage', 'Tangerine', fantasy;
 }
 body {
     color: var(--color-text);
     background-color: var(--color-background);
     font-family: 'IBM Plex Serif', serif;
+}
+
+a {
+    color: var(--color-text);
 }
 
 svg.icon {
@@ -18,3 +25,20 @@ svg.icon {
     vertical-align: top;
     fill: currentColor;
 }
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 0.5rem;                            /* space between items */
+  }
+  
+  .image-grid a {
+    display: block; /* so the link fills each grid cell */
+  }
+  
+  .image-grid img {
+    width: 100%;    /* fill the width of its cell */
+    height: auto;   /* keep its aspect ratio */
+    display: block; /* remove inline-gap below images */
+    object-fit: cover; /* crop/scale to fill if you want uniform squares */
+  }
