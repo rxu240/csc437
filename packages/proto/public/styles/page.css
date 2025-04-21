@@ -42,3 +42,8 @@ svg.icon {
     display: block; /* remove inline-gap below images */
     object-fit: cover; /* crop/scale to fill if you want uniform squares */
   }
+
+  .subtitle {
+    font-size: 3em;    /* 150% of normal text size */
+    font-weight: bold;   /* make it bold */
+  }
