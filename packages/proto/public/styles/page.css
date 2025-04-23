@@ -4,7 +4,7 @@ header {
     color: var(--color-text);
     background-color: var(--color-background);
     text-align: center;
-    font-size: 24px;
+    font-size: 2.4vw;
     font-style: bold;
     font-family: 'Beau Rivage', 'Tangerine', fantasy;
 }
@@ -12,6 +12,14 @@ body {
     color: var(--color-text);
     background-color: var(--color-background);
     font-family: 'IBM Plex Serif', serif;
+}
+footer {
+  position: fixed;
+  bottom: 0;        
+  left: 0;         
+  width: 100%;     
+  text-align: center;   
+  padding: 1rem 0;   
 }
 
 a {
@@ -28,22 +36,17 @@ svg.icon {
 
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-    gap: 0.5rem;                            /* space between items */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 0.5rem;                            
   }
   
   .image-grid a {
-    display: block; /* so the link fills each grid cell */
+    display: block;
   }
   
   .image-grid img {
-    width: 100%;    /* fill the width of its cell */
-    height: auto;   /* keep its aspect ratio */
-    display: block; /* remove inline-gap below images */
-    object-fit: cover; /* crop/scale to fill if you want uniform squares */
-  }
-
-  .subtitle {
-    font-size: 3em;    /* 150% of normal text size */
-    font-weight: bold;   /* make it bold */
+    width: 100%;    
+    height: auto;  
+    display: block; 
+    object-fit: cover; 
   }
