@@ -3,5 +3,9 @@
     --color-text-inverted: black;
     --color-link: var(--color-text);
     --color-background: #426;
+    --padding-side: 20px;
+    --icon-height: 2em;
+    --icon-width: var(--icon-height);
+    --grid-gap: 0.5em;
 }
 

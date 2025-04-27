@@ -15,10 +15,11 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    padding: 0;
+    padding: 0;  
 }
 .body-container {
     min-height: 80vh;
+    padding-left: var(--padding-side);
 }
 main {
   flex: 1;
@@ -29,7 +30,7 @@ footer {
   left: 0;         
   width: 100%;   
   text-align: center;   
-  padding: 1rem 0;   
+  padding: var(--padding-side) 0;   
 }
 
 a {
@@ -38,17 +39,16 @@ a {
 
 svg.icon {
     display: inline;
-    height: 2em;
-    width: 2em;
+    height: var(--icon-height);
+    width: var(--icon-width);
     vertical-align: top;
     fill: currentColor;
-    border-color: red;
 }
 
 .image-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
-    gap: 0.5rem;                            
+    gap: var(--grid-gap);                            
   }
   
   .image-grid a {
