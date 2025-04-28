@@ -1,11 +1,19 @@
 :root {
-    --color-text: white;
-    --color-text-inverted: black;
+    --color-text: #426;
     --color-link: var(--color-text);
-    --color-background: #426;
+    --color-background: white;
     --padding-side: 20px;
     --icon-height: 2em;
     --icon-width: var(--icon-height);
     --grid-gap: 0.5em;
 }
 
+body.darker-mode {
+    --color-background: black;
+    --color-text: #426;
+  }
+
+  body.dark-mode {
+    --color-background: #426;
+    --color-text: white;
+  }
