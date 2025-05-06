@@ -15,16 +15,13 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    padding: 0;  
-}
 
-.body-container {
-    min-height: 80vh;
-    padding-left: var(--padding-side);
 }
 main {
   flex: 1;
   overflow: auto;
+  min-height: 80vh;
+  padding-left: var(--padding-side);
 }
 footer {
   bottom: 0;        

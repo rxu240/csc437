@@ -2,7 +2,7 @@
     --color-text: #426;
     --color-link: var(--color-text);
     --color-background: white;
-    --padding-side: 20px;
+    --padding-side: 2.4vw;
     --icon-height: 2em;
     --icon-width: var(--icon-height);
     --grid-gap: 0.5em;
