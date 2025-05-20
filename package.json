@@ -7,8 +7,12 @@
   },
   "author": "",
   "license": "ISC",
-  "description": ""
-  , "workspaces" : [
-      "packages/*"
-  ]
+  "description": "",
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "mongoose": "^8.14.2"
+  }
 }

@@ -1,0 +1,85 @@
+[{
+  "_id": {
+    "$oid": "682514639807028d93825314"
+  },
+  "subtitle": "Instructions:",
+  "steps": [
+    "Adjust the height of the seat so that the handlebars align with the center of your chest",
+    "Sit down with your back against the chair",
+    "Grab the handlebars",
+    "Retract shoulders for maximum chest engagement",
+    "PUSH!"
+  ],
+  "imageSrc": "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZndpbG45MW5vYXdodDBvczU1NGdnaHZ0Z3dmYjZxdzJsdTY5dmFsZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bbjYlD2NtQiHA1Yice/giphy.gif"
+},
+{
+  "_id": {
+    "$oid": "682cb0f4a6c685644795896c"
+  },
+  "subtitle": "Instructions:",
+  "steps": [
+    "Adjust the height of the seat so that the strap aligns with your hip",
+    "Stand on the platform and lay back against the chair",
+    "Wrap the strap snugly around your hip",
+    "Grab the handlebars",
+    "THRUST!"
+  ],
+  "imageSrc": ""
+},
+{
+  "_id": {
+    "$oid": "682cb105a6c685644795896e"
+  },
+  "subtitle": "Instructions:",
+  "steps": [
+    "Place feet shoulder-width apart in the middle of the pedestal",
+    "Place back and shoulders securely against padding",
+    "Ensure back is straight throughout the movement",
+    "Push with legs up!",
+    "Release the locking mechanism by pulling the handlebar",
+    "When finished, stand straight and reset the locking mechanism"
+  ],
+  "imageSrc": "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZndpbG45MW5vYXdodDBvczU1NGdnaHZ0Z3dmYjZxdzJsdTY5dmFsZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bbjYlD2NtQiHA1Yice/giphy.gif"
+},
+{
+  "_id": {
+    "$oid": "682cb109a6c685644795896f"
+  },
+  "subtitle": "Instructions:",
+  "steps": [
+    "Adjust the height of the seat so that you can touch the bar with the tip of your finger",
+    "Adjust the height of the thigh stop so that it prevents you from moving up",
+    "Partially Stand back up and grab the bar",
+    "Pull the bar down while sitting down",
+    "Pretend to bend the bar inwards while pulling down, leaning back a little",
+    "PULL!"
+  ],
+  "imageSrc": "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXg3YXRlZzdyZmRraTRsM2l6bzhpOHBtbDd1aXAzMGJpZ203dDhqaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/WrUEswheRd1TR05wtU/giphy.gif"
+},
+{
+  "_id": {
+    "$oid": "682cb10fa6c6856447958970"
+  },
+  "subtitle": "Instructions:",
+  "steps": [
+    "Sit down with your legs bent slightly 30 degrees",
+    "Lean forward to grab the handles",
+    "Lean back until back is straight",
+    "Retract shoulders to prioritize lats",
+    "PULL!"
+  ],
+  "imageSrc": "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaDV4MTFsOXZzcDB0dTQ0Z24yMmp0Z3BvNW41djJwaWlxdHB6b2J3bCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0mhHK2Tkcxxf2mwaR6/giphy.gif"
+},
+{
+  "_id": {
+    "$oid": "682cb11aa6c6856447958972"
+  },
+  "subtitle": "Instructions:",
+  "steps": [
+    "Adjust the height of the seat so that your elbows are lined up with the rotating joint",
+    "Place chest against padding",
+    "Grab the handlebars",
+    "Extend arms straight!"
+  ],
+  "imageSrc": "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnlrZnMxNXVqMHE4ZzBpOXV2NjgyZThnMWFqY2NqbjN4bDIwaXZmdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6dw8LV5n4Ysc8loZ3B/giphy.gif"
+}]

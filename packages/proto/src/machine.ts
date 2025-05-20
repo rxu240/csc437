@@ -21,8 +21,8 @@ export class MachineElement extends LitElement {
                 img {
                     max-width: 100%;
                     height: auto;
+                    margin-top: 1rem;
                 }
-    
         `];
 
     connectedCallback() {
@@ -38,13 +38,13 @@ export class MachineElement extends LitElement {
             return;
           }
           const data = (await res.json()) as {
-            imageSrc: string;
             subtitle: string;
             steps: string[];
+            imageSrc: string;
           };
-          this.imageSrc = data.imageSrc;
           this.subtitle = data.subtitle;
           this.steps = data.steps;
+          this.imageSrc = data.imageSrc;
         } catch (e) {
           console.error('Error loading JSON:', e);
         }
@@ -52,11 +52,11 @@ export class MachineElement extends LitElement {
 
       render() {
         return html`
-          <img src="${this.imageSrc}" />
           <h2 slot="Subtitle">${this.subtitle}</h2>
           <ol>
             ${this.steps.map((step) => html`<li>${step}</li>`)}
           </ol>
+          <img src="${this.imageSrc}" />
         `;
       }
 }
