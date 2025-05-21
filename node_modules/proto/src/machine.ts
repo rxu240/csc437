@@ -5,7 +5,7 @@ import {Observer, Auth} from "@calpoly/mustang"
 
 export class MachineElement extends LitElement {
 
-    _authObserver = new Observer<Auth.Model>(this, "blazing:auth");
+    _authObserver = new Observer<Auth.Model>(this, "rxu240-auth");
     _user?: Auth.User;
 
     @property()
@@ -34,21 +34,19 @@ export class MachineElement extends LitElement {
         super.connectedCallback();
         this._authObserver.observe((auth: Auth.Model) => {
           this._user = auth.user;
+          if (this.src) this.hydrate(this.src);
         });
-        if (this.src) this.hydrate(this.src);
     }
 
-    get authorization(): Record<string,string> | undefined {
-      console.log(Auth.User)
-      console.log("==================================================================")
+    get authorization() { 
       if (this._user?.authenticated) {
-        // once you verify the real token field (token vs accessToken), swap it here:
-        return { Authorization: `Bearer ${this._user.username}` };
+        return { Authorization: `Bearer ${(this._user as Auth.AuthenticatedUser).token}` };
       }
       return undefined;
     }
 
     async hydrate(src: string) {
+      console.log(this.authorization)
         try {
           const res = await fetch(src, { headers: this.authorization });
           if (!res.ok) {

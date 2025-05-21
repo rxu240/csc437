@@ -5,7 +5,7 @@ import {Observer,Auth, Events} from "@calpoly/mustang"
 
 export class HeaderElement extends LitElement {
 
-    _authObserver = new Observer<Auth.Model>(this, "rxu240:auth"); //not sure
+    _authObserver = new Observer<Auth.Model>(this, "rxu240-auth");
     _user?: Auth.User;
 
     @state()
@@ -29,25 +29,23 @@ export class HeaderElement extends LitElement {
         super.connectedCallback();
 
         this._authObserver.observe((auth: Auth.Model) => {
+          
           const { user } = auth;
-
           if (user && user.authenticated ) {
             this.loggedIn = true;
             this.userid = user.username;
+            if (this.src) this.hydrate(this.src);
           } else {
             this.loggedIn = false;
             this.userid = undefined;
           }
         }); 
-          if (this.src) this.hydrate(this.src);
+          
       }
 
     get authorization(): Record<string,string> | undefined {
-      console.log(this._user)
-      console.log("==================================================================")
       if (this._user?.authenticated) {
-        // once you verify the real token field (token vs accessToken), swap it here:
-        return { Authorization: `Bearer ${this._user.username}` };
+        return { Authorization: `Bearer ${(this._user as Auth.AuthenticatedUser).username}` };
       }
       return undefined;
     }

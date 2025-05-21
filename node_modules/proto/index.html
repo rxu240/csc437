@@ -21,9 +21,6 @@
             "mu-auth": Auth.Provider
           });
 
-          // HeaderElement.initializeOnce();
-
-
             // helper: wire up a single checkbox+label pair
             function relayToggle(inputId, customEventName) {
               const input = document.getElementById(inputId);
@@ -56,7 +53,7 @@
           </script>
     </head>
     <body>
-      <mu-auth provides="">
+      <mu-auth provides="rxu240-auth">
         <header>
             <header-big src="/data/header.json"> //change to api
             <label>

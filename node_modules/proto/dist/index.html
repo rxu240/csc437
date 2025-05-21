@@ -10,11 +10,14 @@
         <link rel="stylesheet" href="/styles/reset.css" />
         <link rel="stylesheet" href="/styles/tokens.css" />
         <link rel="stylesheet" href="/styles/page.css" />
+
+      <script type="module" crossorigin src="/assets/main-BfulvE3z.js"></script>
+      <link rel="modulepreload" crossorigin href="/assets/reset.css-DTeiQZUM.js">
     </head>
     <body>
+      <mu-auth provides="rxu240-auth">
         <header>
-            <h1>idkHowToUseThisMachine
-            </h1>
+            <header-big src="/data/header.json"> //change to api
             <label>
                 <input id="dark-toggle" type="checkbox" autocomplete="off" />
                 Dark Mode
@@ -25,39 +28,7 @@
             </label>
         </header>
 
-        <script>
-            // helper: wire up a single checkbox+label pair
-            function relayToggle(inputId, customEventName) {
-              const input = document.getElementById(inputId);
-              const label = input.closest('label');
-      
-              // use the .onchange property so we only get change events from *this* one checkbox
-              label.onchange = function(e) {
-                e.stopPropagation();  // prevent the "change" from bubbling up to body
-                // create + re-emit a namespaced toggle event
-                const toggleEvent = new CustomEvent(customEventName, {
-                  bubbles: true,
-                  detail: { checked: e.target.checked }
-                });
-                label.dispatchEvent(toggleEvent);
-              };
-            }
-      
-            // set up both toggles
-            relayToggle('dark-toggle',   'darkmode:toggle');
-            relayToggle('darker-toggle', 'darker-mode:toggle');
-      
-            // now listen on <body> for those custom events
-            document.body.addEventListener('darkmode:toggle', function(e) {
-              document.body.classList.toggle('dark-mode', e.detail.checked);
-            });
-      
-            document.body.addEventListener('darker-mode:toggle', function(e) {
-              document.body.classList.toggle('darker-mode', e.detail.checked);
-            });
-          </script>
         
-
         <div class="image-grid">
             <a href="machines/chest-press.html"><img src="/images/chest-press.webp" alt="Chest press"></a>
             <a href="machines/lat-pulldown.html"><img src="/images/lat-pulldown.webp" alt="…"></a>
@@ -66,6 +37,6 @@
             <a href="machines/tricep-extension.html"><img src="images/tricep-extension.webp" alt="…"></a>
             <a href="machines/low-row.html"><img src="images/low-row.jfif" alt="…"></a>
           </div>
-        
+      </mu-auth>
     </body>
 </html>
