@@ -9,6 +9,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
+        login: resolve(__dirname, 'login.html'),
         chestpress: resolve(__dirname, 'machines/chest-press.html'),
         latpulldown: resolve(__dirname, 'machines/lat-pulldown.html'),
         glutebridge: resolve(__dirname, 'machines/glute-bridge.html'),

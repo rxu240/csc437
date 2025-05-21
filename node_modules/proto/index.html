@@ -10,22 +10,20 @@
         <link rel="stylesheet" href="/styles/reset.css" />
         <link rel="stylesheet" href="/styles/tokens.css" />
         <link rel="stylesheet" href="/styles/page.css" />
-    </head>
-    <body>
-        <header>
-            <h1>idkHowToUseThisMachine
-            </h1>
-            <label>
-                <input id="dark-toggle" type="checkbox" autocomplete="off" />
-                Dark Mode
-            </label>
-            <label>
-                <input id="darker-toggle" type="checkbox" autocomplete="off" />
-                Darker Mode
-            </label>
-        </header>
 
-        <script>
+        <script type="module">
+
+        import { define, Auth } from "@calpoly/mustang";
+        import { HeaderElement } from "/src/header.ts";
+
+          define({
+            "header-big": HeaderElement,
+            "mu-auth": Auth.Provider
+          });
+
+          // HeaderElement.initializeOnce();
+
+
             // helper: wire up a single checkbox+label pair
             function relayToggle(inputId, customEventName) {
               const input = document.getElementById(inputId);
@@ -56,8 +54,22 @@
               document.body.classList.toggle('darker-mode', e.detail.checked);
             });
           </script>
-        
+    </head>
+    <body>
+      <mu-auth provides="">
+        <header>
+            <header-big src="/data/header.json"> //change to api
+            <label>
+                <input id="dark-toggle" type="checkbox" autocomplete="off" />
+                Dark Mode
+            </label>
+            <label>
+                <input id="darker-toggle" type="checkbox" autocomplete="off" />
+                Darker Mode
+            </label>
+        </header>
 
+        
         <div class="image-grid">
             <a href="machines/chest-press.html"><img src="/images/chest-press.webp" alt="Chest press"></a>
             <a href="machines/lat-pulldown.html"><img src="/images/lat-pulldown.webp" alt="…"></a>
@@ -66,6 +78,6 @@
             <a href="machines/tricep-extension.html"><img src="images/tricep-extension.webp" alt="…"></a>
             <a href="machines/low-row.html"><img src="images/low-row.jfif" alt="…"></a>
           </div>
-        
+      </mu-auth>
     </body>
 </html>

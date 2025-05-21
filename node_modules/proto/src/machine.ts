@@ -1,8 +1,13 @@
 import {html, css, LitElement} from "lit";
 import {property, state} from "lit/decorators.js";
 import reset from "./styles/reset.css.ts";
+import {Observer, Auth} from "@calpoly/mustang"
 
 export class MachineElement extends LitElement {
+
+    _authObserver = new Observer<Auth.Model>(this, "blazing:auth");
+    _user?: Auth.User;
+
     @property()
     src?: string;
   
@@ -27,14 +32,27 @@ export class MachineElement extends LitElement {
 
     connectedCallback() {
         super.connectedCallback();
+        this._authObserver.observe((auth: Auth.Model) => {
+          this._user = auth.user;
+        });
         if (this.src) this.hydrate(this.src);
+    }
+
+    get authorization(): Record<string,string> | undefined {
+      console.log(Auth.User)
+      console.log("==================================================================")
+      if (this._user?.authenticated) {
+        // once you verify the real token field (token vs accessToken), swap it here:
+        return { Authorization: `Bearer ${this._user.username}` };
+      }
+      return undefined;
     }
 
     async hydrate(src: string) {
         try {
-          const res = await fetch(src);
+          const res = await fetch(src, { headers: this.authorization });
           if (!res.ok) {
-            console.error(`Failed to fetch in Instructions.ts - hydrate()`);
+            console.error(`Failed to fetch in machine.ts - hydrate()`);
             return;
           }
           const data = (await res.json()) as {
