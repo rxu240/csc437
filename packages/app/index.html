@@ -11,65 +11,16 @@
         <link rel="stylesheet" href="/styles/tokens.css" />
         <link rel="stylesheet" href="/styles/page.css" />
 
-        <script type="module" src="/src/main.ts">
-
-        import { define, Auth } from "@calpoly/mustang";
-        import { HeaderElement } from "/src/header.ts";
-
-          define({
-            "header-big": HeaderElement,
-            "mu-auth": Auth.Provider
-          });
-
-
-            // helper: wire up a single checkbox+label pair
-            function relayToggle(inputId, customEventName) {
-              const input = document.getElementById(inputId);
-              const label = input.closest('label');
-      
-              // use the .onchange property so we only get change events from *this* one checkbox
-              label.onchange = function(e) {
-                e.stopPropagation();  // prevent the "change" from bubbling up to body
-                // create + re-emit a namespaced toggle event
-                const toggleEvent = new CustomEvent(customEventName, {
-                  bubbles: true,
-                  detail: { checked: e.target.checked }
-                });
-                label.dispatchEvent(toggleEvent);
-              };
-            }
-      
-            // set up both toggles
-            relayToggle('dark-toggle',   'darkmode:toggle');
-            relayToggle('darker-toggle', 'darker-mode:toggle');
-      
-            // now listen on <body> for those custom events
-            document.body.addEventListener('darkmode:toggle', function(e) {
-              document.body.classList.toggle('dark-mode', e.detail.checked);
-            });
-      
-            document.body.addEventListener('darker-mode:toggle', function(e) {
-              document.body.classList.toggle('darker-mode', e.detail.checked);
-            });
-          </script>
+        <script type="module" src="/src/main.ts"></script>
     </head>
     <body>
       <mu-history provides="rxu240-history">
-        <mu-auth provides="rxu240-auth">
-          <header>
-            <header-big src="/data/header.json"> //change to api
-              <mu-switch></mu-switch>
-            <label>
-                <input id="dark-toggle" type="checkbox" autocomplete="off" />
-                Dark Mode
-            </label>
-            <label>
-                <input id="darker-toggle" type="checkbox" autocomplete="off" />
-                Darker Mode
-            </label>
-          </header>
+        <mu-auth provides="rxu240-auth" redirect = "/login.html">
+          <mu-store>
+            <header-big></header-big>
+            <mu-switch></mu-switch>
+          </mu-store>
         </mu-auth>
-
       </mu-history>
       
     </body>
