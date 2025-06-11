@@ -1,10 +1,10 @@
 import {html, css, LitElement} from "lit";
 import {property, state} from "lit/decorators.js";
-import reset from "../styles/reset.css";
-import page from "../styles/page.css";
+import reset from "../../public/styles/reset.css";
+import page from "../../public/styles/page.css";
 import {Observer,Auth, Events} from "@calpoly/mustang"
 
-function relayToggle(e: InputEvent, customEventName) {
+function relayToggle(e: InputEvent, customEventName : string) {
     e.stopPropagation();  // prevent the "change" from bubbling up to body
     const target = e.target as HTMLInputElement
     // create + re-emit a namespaced toggle event
@@ -92,11 +92,11 @@ export class HeaderElement extends LitElement {
         return html`
           <header>
           <h1 slot="Header">idkHowToUseThisMachine</h1>
-          <label @change=${(ev)=> relayToggle(ev, "dark-mode")}>
+          <label @change=${(ev: InputEvent)=> relayToggle(ev, "dark-mode")}>
                 <input id="dark-toggle" type="checkbox" autocomplete="off" />
                 Dark Mode
             </label>
-            <label  @change=${(ev)=> relayToggle(ev, "darker-mode")}>
+            <label  @change=${(ev: InputEvent)=> relayToggle(ev, "darker-mode")}>
                 <input id="darker-toggle" type="checkbox" autocomplete="off" />
                 Darker Mode
             </label>
@@ -133,17 +133,14 @@ export class HeaderElement extends LitElement {
       }
 
   static initializeOnce(){
-    // set up both toggles
-    // relayToggle('dark-toggle',   'darkmode:toggle');
-    // relayToggle('darker-toggle', 'darker-mode:toggle');
+  document.body.addEventListener('dark-mode', function(e) {
+    const event = e as CustomEvent;
+    document.body.classList.toggle('dark-mode', event.detail.checked);
+  });
 
-    // now listen on <body> for those custom events
-    document.body.addEventListener('darkmode:toggle', function(e: CustomEvent) {
-      document.body.classList.toggle('dark-mode', e.detail.checked);
-    });
-
-    document.body.addEventListener('darker-mode:toggle', function(e: CustomEvent) {
-      document.body.classList.toggle('darker-mode', e.detail.checked);
-    });
-  }
+  document.body.addEventListener('darker-mode', function(e) {
+    const event = e as CustomEvent;
+    document.body.classList.toggle('darker-mode', event.detail.checked);
+  });
+}
 }

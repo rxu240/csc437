@@ -1,7 +1,8 @@
 import { css, html, LitElement } from "lit";
-import {property, state} from "lit/decorators.js";
-import reset from "../styles/reset.css";
+import {property} from "lit/decorators.js";
+import reset from "../../public/styles/reset.css";
 import {define, Form} from "@calpoly/mustang";
+// import {Machine} from "../components/machine.ts";
 
 export class HomeViewElement extends LitElement {
 
@@ -14,9 +15,6 @@ export class HomeViewElement extends LitElement {
 
   @property()
   mode = "view";
-
-  @state()
-  machine?: Machine;
 
   get src() {
     return `/api/travelers/${this.userid}`;
@@ -42,6 +40,7 @@ export class HomeViewElement extends LitElement {
       font-size: 2.4vw;
       font-style: bold;
       font-family: 'Beau Rivage', 'Tangerine', fantasy;
+      color: var(--color-text);
     }
     body {
         color: var(--color-text);

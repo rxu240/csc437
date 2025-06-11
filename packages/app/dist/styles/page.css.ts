@@ -1,28 +1,6 @@
-"use strict";
-var __defProp = Object.defineProperty;
-var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
-var __getOwnPropNames = Object.getOwnPropertyNames;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __export = (target, all) => {
-  for (var name in all)
-    __defProp(target, name, { get: all[name], enumerable: true });
-};
-var __copyProps = (to, from, except, desc) => {
-  if (from && typeof from === "object" || typeof from === "function") {
-    for (let key of __getOwnPropNames(from))
-      if (!__hasOwnProp.call(to, key) && key !== except)
-        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
-  }
-  return to;
-};
-var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
-var page_css_exports = {};
-__export(page_css_exports, {
-  default: () => page_css_default
-});
-module.exports = __toCommonJS(page_css_exports);
-var import_lit = require("lit");
-const styles = import_lit.css`
+import { css } from "lit";
+
+const styles = css`
   header {
     font-size: 2.4vw;
     font-style: bold;
@@ -81,4 +59,5 @@ const styles = import_lit.css`
     }
 
 `;
-var page_css_default = { styles };
+
+export default { styles };

@@ -1,6 +1,6 @@
 import {html, css, LitElement} from "lit";
 import {property, state} from "lit/decorators.js";
-import reset from "../styles/reset.css.ts";
+import reset from "../../public/styles/reset.css.ts";
 import {Observer, Auth} from "@calpoly/mustang"
 
 export class MachineElement extends LitElement {
@@ -10,7 +10,7 @@ export class MachineElement extends LitElement {
 
     @property()
     src?: string;
-  
+
     @state()
     subtitle = '';
 
@@ -20,9 +20,9 @@ export class MachineElement extends LitElement {
     @state() 
     imageSrc = '';
 
-    get src() {
-      return `/api/travelers/${this.userid}`;
-    }
+    // get src() {
+    //   return `/api/travelers/${this.userid}`;
+    // }
 
     static styles = [
             reset.styles,

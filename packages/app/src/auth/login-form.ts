@@ -1,7 +1,7 @@
 // in proto/src/auth/login-form.ts
 import { html, css, LitElement } from "lit";
 import { property, state } from "lit/decorators.js";
-import reset from "../styles/reset.css.js";
+import reset from "../../public/styles/reset.css.js";
 // import headings from "../styles/headings.css.js";
 
 interface LoginFormData {
