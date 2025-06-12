@@ -21,7 +21,7 @@ export class MachineElement extends LitElement {
     imageSrc = '';
 
     // get src() {
-    //   return `/api/travelers/${this.userid}`;
+    //   return `/api/machines/${this.userid}`;
     // }
 
     static styles = [
@@ -38,7 +38,7 @@ export class MachineElement extends LitElement {
         super.connectedCallback();
         this._authObserver.observe((auth: Auth.Model) => {
           this._user = auth.user;
-          if (this.src) this.hydrate(this.src);
+          if (this.src) this.hydrate(this.src );
         });
     }
 
@@ -50,7 +50,6 @@ export class MachineElement extends LitElement {
     }
 
     async hydrate(src: string) {
-      console.log(this.authorization)
         try {
           const res = await fetch(src, { headers: this.authorization });
           if (!res.ok) {

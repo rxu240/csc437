@@ -55,7 +55,7 @@ export class HeaderElement extends LitElement {
           if (user && user.authenticated ) {
             this.loggedIn = true;
             this.userid = user.username;
-            // if (this.src) this.hydrate(this.src);
+            if (this.src) this.hydrate(this.src);
           } else {
             this.loggedIn = false;
             this.userid = undefined;
@@ -64,34 +64,34 @@ export class HeaderElement extends LitElement {
           
       }
 
-    // get authorization(): Record<string,string> | undefined {
-    //   if (this._user?.authenticated) {
-    //     return { Authorization: `Bearer ${(this._user as Auth.AuthenticatedUser).username}` };
-    //   }
-    //   return undefined;
-    // }
+    get authorization(): Record<string,string> | undefined {
+      if (this._user?.authenticated) {
+        return { Authorization: `Bearer ${(this._user as Auth.AuthenticatedUser).username}` };
+      }
+      return undefined;
+    }
 
-    // async hydrate(src: string) {
-    //     try {
-    //       const res = await fetch(src, { headers: this.authorization });
-    //       if (!res.ok) {
-    //         console.error(`Failed to fetch in header.ts - hydrate()`);
-    //         return;
-    //       }
-    //       const data = (await res.json()) as {
-    //         header: string;
-    //       };
-    //       this.header = data.header;
-    //     } catch (e) {
-    //       console.error('Error loading JSON:', e);
-    //     }
-    //   }
+    async hydrate(src: string) {
+        try {
+          const res = await fetch(src, { headers: this.authorization });
+          if (!res.ok) {
+            console.error(`Failed to fetch in header.ts - hydrate()`);
+            return;
+          }
+          const data = (await res.json()) as {
+            header: string;
+          };
+          this.header = data.header;
+        } catch (e) {
+          console.error('Error loading JSON:', e);
+        }
+      }
 
       render() {
         
         return html`
           <header>
-          <h1 slot="Header">idkHowToUseThisMachine</h1>
+          <h1>idkHowToUseThisMachine</h1>
           <label @change=${(ev: InputEvent)=> relayToggle(ev, "dark-mode")}>
                 <input id="dark-toggle" type="checkbox" autocomplete="off" />
                 Dark Mode
@@ -126,9 +126,7 @@ export class HeaderElement extends LitElement {
 
       renderSignInButton() {
         return html`
-          <a href="/login.html">
-            Sign In…
-          </a>
+          <a @click=${() => location.assign("/login.html")}>Sign In</a>
         `;
       }
 

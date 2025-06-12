@@ -3,7 +3,6 @@ import {property} from "lit/decorators.js";
 import reset from "../../public/styles/reset.css";
 import {define, Form} from "@calpoly/mustang";
 // import {Machine} from "../components/machine.ts";
-
 export class HomeViewElement extends LitElement {
 
   static uses = define({
@@ -16,19 +15,20 @@ export class HomeViewElement extends LitElement {
   @property()
   mode = "view";
 
-  get src() {
-    return `/api/travelers/${this.userid}`;
-  }
+  // get src() {
+  //   return `/api/machines/${this.userid}`;
+  // }
 
   render() {
     return html`
         <div class="image-grid">
-            <a href="machines/chest-press.html"><img src="/images/chest-press.webp" alt="Chest press"></a>
-            <a href="machines/lat-pulldown.html"><img src="/images/lat-pulldown.webp" alt="…"></a>
-            <a href="machines/hack-squat.html"><img src="/images/hack-squat.webp" alt="…"></a>
-            <a href="machines/glute-bridge.html"><img src="/images/glute-bridge.webp" alt=""></a>
-            <a href="machines/tricep-extension.html"><img src="images/tricep-extension.webp" alt="…"></a>
-            <a href="machines/low-row.html"><img src="images/low-row.jfif" alt="…"></a>
+            <a href="../../public/machines/chest-press.html"><img src="/images/chest-press.webp" alt="Chest press"></a>
+
+            <a href="../../public/machines/lat-pulldown.html"><img src="/images/lat-pulldown.webp" alt="…"></a>
+            <a href="../../public/machines/hack-squat.html"><img src="/images/hack-squat.webp" alt="…"></a>
+            <a href="../../public/machines/glute-bridge.html"><img src="/images/glute-bridge.webp" alt=""></a>
+            <a href="../../public/machines/tricep-extension.html"><img src="images/tricep-extension.webp" alt="…"></a>
+            <a href="../../public/machines/low-row.html"><img src="images/low-row.jfif" alt="…"></a>
           </div>
     `;
   }
